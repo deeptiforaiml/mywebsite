@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Lets Try to host a site</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333333;
+            text-align: center;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #cccccc;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #66ccff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lets Try to host a site</h1>
+    <form id="my-form">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+    <script>
+        // Get the form element
+        let form = document.getElementById("my-form");
+
+        // Add an event listener for form submission
+        form.addEventListener("submit", function(event) {
+            // Prevent the default form action
+            event.preventDefault();
+
+            // Get the name input element
+            let name = document.getElementById("name");
+
+            // Get the message div element
+            let message = document.getElementById("message");
+
+            // Set the message content to a welcome message
+            message.innerHTML = "Welcome to my website, " + name.value + "!";
+
+            // Clear the name input value
+            name.value = "";
+        });
+    </script>
+</body>
+</html>
